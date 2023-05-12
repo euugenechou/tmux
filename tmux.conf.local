@@ -125,8 +125,8 @@ tmux_conf_theme_message_command_bg="$tmux_conf_theme_colour_15"
 tmux_conf_theme_message_command_attr="bold"
 
 # window modes style
-tmux_conf_theme_mode_fg="$tmux_conf_theme_colour_0"
-tmux_conf_theme_mode_bg="$tmux_conf_theme_colour_7"
+tmux_conf_theme_mode_fg="$tmux_conf_theme_colour_5"
+tmux_conf_theme_mode_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_mode_attr="bold"
 
 # status line style
