@@ -4,7 +4,6 @@
 #         without any warranty.
 #         Copyright 2012— Gregory Pakosz (@gpakosz).
 
-
 # -- navigation ----------------------------------------------------------------
 
 # if you're running tmux within iTerm2
@@ -13,7 +12,6 @@
 #   - and iTerm2 is configured to send [1;9A -> [1;9D for option + arrow keys
 # then uncomment the following line to make Meta + arrow keys mapping work
 #set -ga terminal-overrides "*:kUP3=\e[1;9A,*:kDN3=\e[1;9B,*:kRIT3=\e[1;9C,*:kLFT3=\e[1;9D"
-
 
 # -- windows & pane creation ---------------------------------------------------
 
@@ -36,7 +34,6 @@ tmux_conf_new_pane_reconnect_ssh=false
 #   - true
 #   - false (default)
 tmux_conf_new_session_prompt=false
-
 
 # -- display -------------------------------------------------------------------
 
@@ -64,30 +61,30 @@ tmux_conf_24b_colour=true
 # tmux_conf_theme_colour_16="#d70000"   # red
 # tmux_conf_theme_colour_17="#e4e4e4"   # white
 
-# default theme (ansi)
-tmux_conf_theme_colour_0="colour0"      # black
-tmux_conf_theme_colour_8="colour8"      # black (bright)
-tmux_conf_theme_colour_1="colour1"      # red
-tmux_conf_theme_colour_9="colour9"      # red (bright)
-tmux_conf_theme_colour_2="colour2"      # green
-tmux_conf_theme_colour_10="colour10"    # green (bright)
-tmux_conf_theme_colour_3="colour3"      # yellow
-tmux_conf_theme_colour_11="colour11"    # yellow (bright)
-tmux_conf_theme_colour_4="colour4"      # blue
-tmux_conf_theme_colour_12="colour12"    # blue (bright)
-tmux_conf_theme_colour_5="colour5"      # magenta
-tmux_conf_theme_colour_13="colour13"    # magenta (bright)
-tmux_conf_theme_colour_6="colour6"      # cyan
-tmux_conf_theme_colour_14="colour14"    # cyan (bright)
-tmux_conf_theme_colour_7="colour7"      # white
-tmux_conf_theme_colour_15="colour15"    # white (bright)
+# One Monokai theme (direct hex)
+tmux_conf_theme_colour_0="#1e2024"      # black (statusline bg)
+tmux_conf_theme_colour_8="#4b5261"      # black (bright)
+tmux_conf_theme_colour_1="#f75f5f"      # red
+tmux_conf_theme_colour_9="#f75f5f"      # red (bright)
+tmux_conf_theme_colour_2="#98c379"      # green
+tmux_conf_theme_colour_10="#98c379"     # green (bright)
+tmux_conf_theme_colour_3="#e5c07b"      # yellow
+tmux_conf_theme_colour_11="#e5c07b"     # yellow (bright)
+tmux_conf_theme_colour_4="#61afef"      # blue
+tmux_conf_theme_colour_12="#61afef"     # blue (bright)
+tmux_conf_theme_colour_5="#c678dd"      # magenta
+tmux_conf_theme_colour_13="#c678dd"     # magenta (bright)
+tmux_conf_theme_colour_6="#56b6c2"      # cyan
+tmux_conf_theme_colour_14="#56b6c2"     # cyan (bright)
+tmux_conf_theme_colour_7="#abb2bf"      # white (fg)
+tmux_conf_theme_colour_15="#abb2bf"     # white (bright)
 
-# extra backgrounds
-tmux_conf_theme_bg1="#3c3836"
-tmux_conf_theme_bg2="#504945"
-tmux_conf_theme_bg3="#665c54"
-tmux_conf_theme_bg4="#7c6f64"
-tmux_conf_theme_bg5="#7d7064"
+# extra backgrounds (One Monokai)
+tmux_conf_theme_bg1="#1e2024"
+tmux_conf_theme_bg2="#282c34"
+tmux_conf_theme_bg3="#353944"
+tmux_conf_theme_bg4="#4b5261"
+tmux_conf_theme_bg5="#676e7b"
 
 # window style
 tmux_conf_theme_window_fg="default"
@@ -107,8 +104,8 @@ tmux_conf_theme_focused_pane_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_pane_border_style=thin
 
 # pane borders colours:
-tmux_conf_theme_pane_border="$tmux_conf_theme_colour_0"
-tmux_conf_theme_pane_active_border="$tmux_conf_theme_colour_0"
+tmux_conf_theme_pane_border="$tmux_conf_theme_bg3"
+tmux_conf_theme_pane_active_border="$tmux_conf_theme_bg4"
 
 # pane indicator colours (when you hit <prefix> + q)
 tmux_conf_theme_pane_indicator="$tmux_conf_theme_colour_7"
@@ -159,7 +156,7 @@ tmux_conf_theme_terminal_title="#h ❐ #S ● #I #W"
 tmux_conf_theme_window_status_fg="$tmux_conf_theme_bg5"
 tmux_conf_theme_window_status_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_window_status_attr="none"
-tmux_conf_theme_window_status_format="[#I:#W]"
+tmux_conf_theme_window_status_format="#I:#W"
 #tmux_conf_theme_window_status_format="#{circled_window_index} #W"
 #tmux_conf_theme_window_status_format="#I #W#{?window_bell_flag,🔔,}#{?window_zoomed_flag,🔍,}"
 
@@ -176,7 +173,7 @@ tmux_conf_theme_window_status_format="[#I:#W]"
 tmux_conf_theme_window_status_current_fg="$tmux_conf_theme_colour_7"
 tmux_conf_theme_window_status_current_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_window_status_current_attr="bold"
-tmux_conf_theme_window_status_current_format="[#I:#W]"
+tmux_conf_theme_window_status_current_format="#I:#W#{?window_zoomed_flag, [+],}"
 #tmux_conf_theme_window_status_current_format="#{circled_window_index} #W"
 #tmux_conf_theme_window_status_current_format="#I #W#{?window_zoomed_flag,🔍,}"
 
@@ -236,7 +233,7 @@ tmux_conf_theme_status_left=" #S "
 tmux_conf_theme_status_right="#{prefix} %B %d, %I:%M %p | #{hostname} "
 
 # status left style
-tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_12"
+tmux_conf_theme_status_left_fg="$tmux_conf_theme_colour_4"
 tmux_conf_theme_status_left_bg="$tmux_conf_theme_colour_0"
 tmux_conf_theme_status_left_attr="bold"
 
@@ -318,7 +315,6 @@ tmux_conf_battery_status_discharging="↓"    # U+2193
 tmux_conf_theme_clock_colour="$tmux_conf_theme_colour_4"
 tmux_conf_theme_clock_style="24"
 
-
 # -- clipboard -----------------------------------------------------------------
 
 # in copy mode, copying selection also copies to the OS clipboard
@@ -327,7 +323,6 @@ tmux_conf_theme_clock_style="24"
 # on macOS, this requires installing reattach-to-user-namespace, see README.md
 # on Linux, this requires xsel or xclip
 tmux_conf_copy_to_os_clipboard=true
-
 
 # -- user customizations -------------------------------------------------------
 # this is the place to override or undo settings
@@ -341,6 +336,14 @@ bind | split-window -h
 
 # start with mouse mode enabled
 set -g mouse on
+
+# use vi keys in copy mode so the copy-mode-vi bindings (v/y) are active,
+# including when plugins like tmux-fuzzback drop you into copy mode
+set -g mode-keys vi
+
+# copy mode: yank to macOS clipboard without leaving copy mode
+# (overrides oh-my-tmux's default `y` -> copy-selection-and-cancel)
+bind -T copy-mode-vi y send -X copy-pipe "pbcopy"
 
 # force Vi mode
 #   really you should export VISUAL or EDITOR environment variable, see manual
@@ -387,11 +390,14 @@ tmux_conf_update_plugins_on_reload=true
 
 # to enable a plugin, use the 'set -g @plugin' syntax:
 # visit https://github.com/tmux-plugins for available plugins
+set -g @plugin 'roosta/tmux-fuzzback'
+set -g @fuzzback-finder-layout 'reverse'
+set -g @fuzzback-hide-preview 1
+
 # set -g @plugin 'tmux-plugins/tmux-copycat'
 # set -g @plugin 'tmux-plugins/tmux-cpu'
-set -g @plugin 'tmux-plugins/tmux-resurrect'
-set -g @plugin 'tmux-plugins/tmux-continuum'
-
+# set -g @plugin 'tmux-plugins/tmux-resurrect'
+# set -g @plugin 'tmux-plugins/tmux-continuum'
 
 # -- custom variables ----------------------------------------------------------
 
